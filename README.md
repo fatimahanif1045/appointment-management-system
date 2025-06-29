@@ -78,10 +78,15 @@ Backend
 
 env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/dashboard
-JWT_SECRET=your_jwt_secret_key
+MONGO_URI=mongodb://127.0.0.1:27017/appointments
+ACCESS_TOKEN_SECRET=hfD8sDk2n34kDjslf9234nfsdkfJSLF8sdjfLSDkjf9234Jfsdlf=
+REFRESH_TOKEN_SECRET=Kjsdf9s8Dfj34nDFsjdlksJFDKslf9sdfjklsdfj234jsldkf==
+ACCESS_TOKEN_LIFETIME=15m
+REFRESH_TOKEN_LIFETIME=7d
+
 
 Frontend
 
 env
-VITE_API_BASE_URL=http://localhost:5000/api
+# .env.example  (place in frontend root)
+REACT_APP_API_URL=http://localhost:5000/api
