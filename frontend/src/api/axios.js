@@ -3,9 +3,7 @@ import axios from 'axios';
 
 /* ───────────────────── 0. Config & helpers ───────────────────── */
 
-const BASE_URL =
-  process.env.REACT_APP_API_URL?.replace(/\/+$/, '') ||
-  'http://localhost:5000/api';
+const BASE_URL = process.env.REACT_APP_API_URL?.replace(/\/+$/, '') || 'http://localhost:5000/api';
 
 if (process.env.NODE_ENV === 'development') {
   if (!process.env.REACT_APP_API_URL) {
@@ -24,7 +22,7 @@ const logout = () => {
 
 const api = axios.create({
   baseURL: BASE_URL,
-  withCredentials: true
+  withCredentials: true  // keep cookies for refresh token
 });
 
 /* ───────────────────── 1. Request interceptor ────────────────── */

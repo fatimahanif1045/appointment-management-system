@@ -11,14 +11,13 @@ import { roleMiddleware } from '../middleware/role.middleware.js';
 
 const router = Router();
 
+// User: Create an appointment
 router.post('/', authMiddleware, validateCreate, createAppointment);
+
+// User or Admin: List appointments
 router.get('/', authMiddleware, listAppointments);
-router.patch(
-  '/:id/status',
-  authMiddleware,
-  roleMiddleware('admin'),
-  validateStatus,
-  changeStatus
-);
+
+// Admin: Change the status of an appointment
+router.patch('/:id/status', authMiddleware, roleMiddleware('admin'), validateStatus, changeStatus);
 
 export default router;
