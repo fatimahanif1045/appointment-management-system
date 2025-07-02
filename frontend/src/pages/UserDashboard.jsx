@@ -10,7 +10,7 @@ export default function UserDashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const apptRes = await api.get('/appointments/my');
+      const apptRes = await api.get('/appointments');
       const docRes = await api.get('/doctors');
       setAppointments(apptRes.data);
       setDoctors(docRes.data);
